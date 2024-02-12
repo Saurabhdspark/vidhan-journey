@@ -9,9 +9,9 @@ Template Name: Home
     <main id="main" class="site-main" role="main">
 
     <section class="swiper-banner">
-        <div class="slider">
+        <div class="sliders">
         <?php
-          echo do_shortcode('[smartslider3 slider="4"]');
+          echo do_shortcode('[smartslider3 slider="3"]');
         ?>
             <div class="overlay"></div>
         </div>
