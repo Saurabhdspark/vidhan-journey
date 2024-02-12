@@ -7729,3 +7729,7 @@ body.style-tab {
         display: block; /* Show on mobile screens */
     }
 }
+
+.slick-slide {
+    padding: 10px;
+}
