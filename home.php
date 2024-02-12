@@ -11,7 +11,7 @@ Template Name: Home
     <section class="swiper-banner">
         <div class="sliders">
         <?php
-          echo do_shortcode('[smartslider3 slider="4"]');
+          echo do_shortcode('[smartslider3 slider="3"]');
         ?>
             <div class="overlay"></div>
         </div>
