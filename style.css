@@ -575,13 +575,14 @@ ul.nav-mini {
         padding: 0;
         color: #333;
         position: relative;
-        font-weight: 600
+        font-weight: 600;
+        text-decoration: none;
     }
 
         .nav.navbar-nav > li > a:hover, .nav.navbar-nav > li.active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
             color: #d60d45;
             background: 0 0;
-            text-decoration: none
+            text-decoration: none !important;
         }
 
     .nav.navbar-nav > li:last-child > a:after {
@@ -1166,7 +1167,7 @@ section.swiper-banner {
 }
 
 .slider {
-    height: 600px;
+    /* height: 600px; */
     overflow: hidden;
     position: relative
 }
@@ -2206,7 +2207,8 @@ footer {
 
         .footer-links li a {
             color: #fff;
-            opacity: .8
+            opacity: .8;
+            text-decoration: none;
         }
 
             .footer-links li a:hover {
@@ -7707,3 +7709,23 @@ body.style-tab {
         font-size: 14px
     }
 
+/* Default styles for desktop menu */
+#navbar {
+    display: block; /* Show on desktop screens */
+}
+
+#slicknav-mobile {
+    display: none; /* Hide on desktop screens */
+}
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 767px) {
+    /* Styles for mobile menu */
+    #navbar {
+        display: none; /* Hide on mobile screens */
+    }
+
+    #slicknav-mobile {
+        display: block; /* Show on mobile screens */
+    }
+}

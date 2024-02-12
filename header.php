@@ -61,7 +61,7 @@
 																$logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
 																echo '<img src="' . esc_url($logo_url) . '" alt="Custom Logo">';
 														} else {
-																echo '<h1>' . get_bloginfo('name') . '</h1>';
+																echo '<h5>' . get_bloginfo('name') . '</h5>';
 														}
 												?>
 
@@ -78,14 +78,24 @@
 																		$menu_item_title = esc_html($menu_item->title);
 
 																		echo '<li class="' . $menu_item_classes . '">';
-																		echo '<a href="' . $menu_item_url . '">' . $menu_item_title . ' <i class="fa fa-angle-down"></i></a>';
+																		echo '<a href="' . $menu_item_url . '">' . $menu_item_title . '</a>';
 																		echo '</li>';
 																}
 																?>
 														</ul>
 												</div>
 
-                        <div id="slicknav-mobile"></div>
+												<div id="slicknav-mobile"></div>
+
+												<script>
+														jQuery(document).ready(function($) {
+																$('#responsive-menu').slicknav({
+																		prependTo: '#slicknav-mobile',
+																		label: ''
+																});
+														});
+												</script>
+
                     </nav>
                 </div>
             </div>
