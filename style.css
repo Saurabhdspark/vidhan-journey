@@ -7827,10 +7827,7 @@ img.texi_feature-image {
 .slick-next {
     right: 10px;
 }
-a:visited {
-    color: #fff !important;
-   
-}
+
 a {
     text-decoration: none;
 }
