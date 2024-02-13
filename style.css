@@ -188,7 +188,7 @@ section {
     }
 
     section:nth-child(odd) {
-        background: #fff
+        background: #dcdcdc1a
     }
 
     section.white-bg {
@@ -234,7 +234,7 @@ abtn-blue:hover {
 
     .btn-red:hover {
         background: #fff;
-        color: #d60d45;
+        color: #d60d45 !important;
         border-color: #d60d45
     }
 
@@ -352,7 +352,7 @@ section.breadcrumb-outer {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,.5)
+    /* background: rgba(0,0,0,.5) */
 }
 
 .breadcrumb-outer h2 {
@@ -1296,10 +1296,11 @@ section.swiper-banner {
 
 .slider a.btn-blue {
     padding: 10px 25px;
-    background: 0 0;
+    background: 1 0;
     border-width: 2px;
     border-color: #fff;
-    transition: all .3s
+    transition: all .3s;
+    text-decoration: auto;
 }
 
     .slider a.btn-blue:hover {
@@ -1533,7 +1534,7 @@ p#demo {
 }
 
 section.deals {
-    background: url(../images/dealsbg.jpg) no-repeat;
+   
     background-attachment: fixed;
     background-size: cover;
     position: relative;
@@ -1545,7 +1546,7 @@ section.deals {
 }
 
 .section-title-white h2, .section-title-white p, .section-title-white [class^=flaticon-]:before, .section-title-white [class*=" flaticon-"]:before {
-    color: #fff
+    color: #555
 }
 
 .section-title-white .section-icon:before, .section-title-white .section-icon:after {
@@ -7732,4 +7733,104 @@ body.style-tab {
 
 .slick-slide {
     padding: 10px;
+}
+
+.gy-30 {
+    --bs-gutter-y: 30px;
+}
+.taxi-box {
+    text-align: center;
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 13px 18px rgba(0,0,0,0.05);
+    padding: 40px;
+}
+.taxi-box_img {
+    margin-bottom: 25px;
+}
+.taxi-box_img img {
+    height: 105px;
+}
+.taxi-box_title {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.taxi-box_title a {
+    color: inherit;
+}
+.taxi-box_rate {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.taxi-box .taxi-feature {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 2px;
+}
+.taxi-feature_icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    line-height: 36px;
+    background-color: #000;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 10px;
+}
+.taxi-box .taxi-feature_title {
+    min-width: auto;
+    margin-right: auto;
+    margin-top: 21px;
+}
+.taxi-feature_title {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0;
+    min-width: 129px;
+    text-transform: uppercase;
+}
+.taxi-feature_info {
+    font-family: var(--title-font);
+    font-size: 12px;
+    margin-top: 21px;
+}
+.g-box-link {
+    text-align: center;
+    font-size: xx-large;
+}
+.g-whatsapp {
+    color: green;
+}
+.taxi_feature_details {
+    display: contents;
+}
+img.texi_feature-image {
+    height: 25px;
+}
+/* Add this CSS to your theme stylesheet or custom CSS */
+.slick-prev,
+.slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+a:visited {
+    color: #fff !important;
+   
+}
+a {
+    text-decoration: none;
 }

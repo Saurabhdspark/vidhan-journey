@@ -80,5 +80,67 @@ function register_tour_packages_post_type() {
 }
 add_action('init', 'register_tour_packages_post_type');
 
+// Plugin approach: Create a file named custom-post-types.php in your plugin folder
+
+
+
+function create_car_post_type() {
+
+  // Register the "cars" custom post type
+  register_post_type( 'cars', [
+    'labels' => [
+      'name' => 'Cars',
+      'singular_name' => 'Car',
+      'menu_name' => 'Cars',
+      'add_new' => 'Add New Car',
+      'add_new_item' => 'Add New Car',
+      'edit_item' => 'Edit Car',
+      'new_item' => 'New Car',
+      'view_item' => 'View Car',
+      'search_items' => 'Search Cars',
+      'not_found' => 'No Cars found',
+      'not_found_in_trash' => 'No Cars found in Trash',
+      'parent_item_colon' => 'Parent Car:',
+      'all_items' => 'All Cars',
+      'archives' => 'Car Archives',
+      'attributes' => 'Car Attributes',
+      'insert' => 'Insert',
+      'uploaded_to_this_item' => 'Uploaded to this Car',
+      'featured_image' => 'Featured Image',
+      'set_featured_image' => 'Set featured image',
+      'remove_featured_image' => 'Remove featured image',
+      'use_featured_image' => 'Use featured image',
+      'filter_items' => 'Filter Cars',
+      'items_list_navigation' => 'Car navigation',
+      'items_list' => 'Car list',
+    ],
+    'public' => true, // Make the post type publicly accessible
+    'has_archive' => true, // Create an archive page for all cars
+    'menu_position' => 5, // Set the menu position (lower numbers come first)
+    'supports' => [
+      'title',
+      'editor',
+      'excerpt',
+      'thumbnail',
+      'custom-fields',
+      'comments',
+      'revisions',
+      'page-attributes',
+    ],
+    'taxonomies' => [ // Add support for custom taxonomies (optional)
+      'category',
+      'post_tag',
+    ],
+    'rewrite' => [ // Customize the permalink structure (optional)
+      'slug' => 'cars',
+      'with_front' => false,
+    ],
+  ] );
+}
+
+add_action( 'init', 'create_car_post_type' );
+
+
+
 // END ENQUEUE PARENT ACTION
 ?>
