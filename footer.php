@@ -19,12 +19,12 @@
         <div class="footer-upper">
             <div class="container">
                 <div class="newsletter text-center">
-                    <div class="section-title section-title-white text-center">
-                        <h2>Newsletter Signup</h2>
+                    <div class="section-title section-title-whites text-center">
+                        <h2 style="color:#FFFFFF;">Newsletter Signup</h2>
                         <div class="section-icon section-icon-white">
                             <i class="flaticon-diamond"></i>
                         </div>
-                        <p>Subscribe to our weekly newsletter to get updated on our latest deals</p>
+                        <p style="color:#FFFFFF;">Subscribe to our weekly newsletter to get updated on our latest deals</p>
                     </div>
                     <form>
                         <div class="form-group">
@@ -133,7 +133,7 @@
                             <div class="footer-links-list">
                                 <div class="footer-instagram">
                                     <h3>Instagram</h3>
-                                    <ul>
+                                    <!-- <ul>
                                         <li>
                                             <img src="images/insta1.jpg" alt="Image">
                                         </li>
@@ -161,7 +161,7 @@
                                         <li>
                                             <img src="images/insta9.jpg" alt="Image">
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div>
@@ -186,16 +186,16 @@
                             <ul>
                                 <li>We Accept</li>
                                 <li>
-                                    <img src="images/payment1.png" alt="Image">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/payment1.png" alt="Image">
                                 </li>
                                 <li>
-                                    <img src="images/payment2.png" alt="Image">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/payment2.png" alt="Image">
                                 </li>
                                 <li>
-                                    <img src="images/payment3.png" alt="Image">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/payment3.png" alt="Image">
                                 </li>
                                 <li>
-                                    <img src="images/payment4.png" alt="Image">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/payment4.png" alt="Image">
                                 </li>
                             </ul>
                         </div>

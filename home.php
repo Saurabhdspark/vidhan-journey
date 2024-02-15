@@ -2,6 +2,9 @@
 /*
 Template Name: Home
 */
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 ?>
 <?php get_header(); ?>
 
@@ -44,7 +47,7 @@ Template Name: Home
                         <div class="taxi-box_img">
                         <?php
                             if (has_post_thumbnail()) {
-                                the_post_thumbnail('thumbnail', array('alt' => 'taxi'));
+                                the_post_thumbnail('full', array('alt' => 'taxi'));
                             } else {
                                 echo '<img src="' . esc_url(get_template_directory_uri() . '/images/default-thumbnail.jpg') . '" alt="Default Image">';
                             }
@@ -138,7 +141,7 @@ Template Name: Home
                                 <div class="package-image">
                                     <?php
                                     if (has_post_thumbnail()) {
-                                        the_post_thumbnail('thumbnail', array('alt' => 'Image'));
+                                        the_post_thumbnail('full', array('alt' => 'Image'));
                                     } else {
                                         echo '<img src="' . esc_url(get_template_directory_uri() . '/images/default-thumbnail.jpg') . '" alt="Default Image">';
                                     }
@@ -220,7 +223,10 @@ Template Name: Home
 
     
 
-    <section class="trip-ad" style="background: url(<?php echo the_field('explore_section_image'); ?>">
+    <section class="trip-ad" style="background: url(<?php 
+    $image_id = the_field('explore_section_image'); 
+    $image_url = wp_get_attachment_image_src($image_id, 'full'); // 'full' returns the original size
+    echo $image_url; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -258,211 +264,91 @@ Template Name: Home
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
             </div>
             <div class="row sale-slider slider-button">
+                <?php
+                    $args = array(
+                        'post_type'      => 'tour_packages',
+                        'posts_per_page' => -1,
+                    );
+
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                    ?>
                 <div class="col-md-12">
                     <div class="sale-item">
                         <div class="sale-image">
-                            <img src="images/sale1.jpg" alt="Image">
+                                <?php
+                                    if (has_post_thumbnail()) {
+                                        the_post_thumbnail('full', array('alt' => 'Image'));
+                                    } else {
+                                        echo '<img src="' . esc_url(get_template_directory_uri() . '/images/default-thumbnail.jpg') . '" alt="Default Image">';
+                                    }
+                                    ?>
                         </div>
                         <div class="sale-content">
                             <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
+                                <?php
+                                    $rating = get_post_meta(get_the_ID(), 'tour_rating', true);
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        echo '<span class="fa fa-star' . ($i <= $rating ? ' checked' : '') . '"></span>';
+                                    }
+                                ?>
                             </div>
                             <h3>
-                                <a href="#">Surfing at Bahamas</a>
+                                <a href="#"><?php the_title(); ?></a>
                             </h3>
                             <p>
-                                <i class="flaticon-time"></i> 5 days
+                                <i class="flaticon-time"></i> <?php echo the_field('tour_duration'); ?>
                             </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
+                            <p><?php the_excerpt(); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="btn-blue btn-red">View More</a>
                         </div>
-                        <div class="sale-tag">
+                        <!-- <div class="sale-tag">
                             <span class="old-price">$1449</span>
                             <span class="new-price"> $900</span>
                         </div>
-                        <div class="sale-overlay"></div>
+                        <div class="sale-overlay"></div> -->
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale2.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale3.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale4.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale1.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale3.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="sale-item">
-                        <div class="sale-image">
-                            <img src="images/sale2.jpg" alt="Image">
-                        </div>
-                        <div class="sale-content">
-                            <div class="sale-review">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h3>
-                                <a href="#">Surfing at Bahamas</a>
-                            </h3>
-                            <p>
-                                <i class="flaticon-time"></i> 5 days
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View More</a>
-                        </div>
-                        <div class="sale-tag">
-                            <span class="old-price">$1449</span>
-                            <span class="new-price"> $900</span>
-                        </div>
-                        <div class="sale-overlay"></div>
-                    </div>
-                </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo 'No tour packages found.';
+                endif;
+                ?>
             </div>
         </div>
+        <script>
+    jQuery(document).ready(function($) {
+        jQuery('.sale-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false, // Disable arrows
+            dots: false,    // Enable dots
+            centerMode: true,
+            centerPadding: '0', // Adjust the spacing around the center item
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
+
+</script>
     </section>
 
     </main><!-- #main -->

@@ -1917,11 +1917,10 @@ section.bucket-list {
 
 section.trip-ad {
     position: relative;
-    background: url(../images/adbg.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    overflow: hidden
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    overflow: hidden !important;
 }
 
     section.trip-ad .container {
@@ -2403,7 +2402,8 @@ li.social-icon {
 }
 
     .sale-image img {
-        transition: all ease-in-out 2s
+        transition: all ease-in-out 2s;
+        min-height: 460px;
     }
 
 .sale-tag {
@@ -7784,7 +7784,6 @@ body.style-tab {
     margin-top: 10px;
 }
 .taxi-box .taxi-feature_title {
-    min-width: auto;
     margin-right: auto;
     margin-top: 21px;
 }
@@ -7830,4 +7829,11 @@ img.texi_feature-image {
 
 a {
     text-decoration: none;
+}
+
+.section-icon-white:before {
+    background: #FFFFFF !important;
+}
+.section-icon-white:after {
+    background: #FFFFFF !important;
 }
