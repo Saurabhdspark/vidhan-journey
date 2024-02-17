@@ -51,7 +51,7 @@
 		<div class="navigation">
         <div class="container">
             <div class="navigation-content">
-                <div class="header_menu">
+                <div class="header_menu site-header">
 
                     <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
                         <div class="logo pull-left">

@@ -19,6 +19,38 @@ ini_set('display_errors', 1);
             <div class="overlay"></div>
         </div>
     </section>
+
+    <section class="trip-ad" style="background: url(<?php 
+        $image_id = the_field('explore_section_image'); 
+        $image_url = wp_get_attachment_image_src($image_id, 'full'); // 'full' returns the original size
+        echo $image_url; ?>">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="trip-ad-content">
+                            <div class="ad-title">
+                                <h2>
+                                <?php echo the_field('explore_title'); ?>
+                                    <span><?php echo the_field('explore_highlight_title_'); ?></span>
+                                </h2>
+                            </div>
+                            <?php echo the_field('explore_description'); ?>
+                            <div class="trip-ad-btn">
+                                <a href="<?php echo the_field('explore_button_link'); ?>" class="btn-blue btn-red"><?php echo the_field('explore_button'); ?></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ad-price">
+                            <div class="ad-price-inner">
+                            <a href="<?php echo the_field('explore_circle_link'); ?>"><span><?php echo the_field('explore_circle_text'); ?> <span class="rate"><?php echo the_field('explore_circle_text_big'); ?></span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
     <section class="" style="background-color: #ffffff;">
         <div class="container">
             <div class="section-title text-center">
@@ -68,12 +100,12 @@ ini_set('display_errors', 1);
                                     $ride_type = get_sub_field('car_ride_type');
                                     $ride_price = get_sub_field('car_ride_price');
                             ?>
-                                    <div class="col-md-4">
-                                        <div class="taxi-feature_icon">
-                                            <img src="<?php echo esc_url($ride_icon); ?>" class="texi_feature-image" alt="png">
+                                    <!-- <div class="col-md-4">
+                                        <div class="taxi-feature_icons">
+                                            <img src="<?php //echo esc_url($ride_icon); ?>" class="texi_feature-image" alt="png">
                                         </div>
-                                    </div>
-                                    <div class="col-md-8 taxi_feature_details">
+                                    </div> -->
+                                    <div class="col-md-12 taxi_feature_details">
                                         <h3 class="taxi-feature_title"><?php echo esc_html($ride_type); ?></h3>
                                         <span class="taxi-feature_info"><?php echo esc_html($ride_price); ?></span>
                                     </div>
@@ -223,36 +255,7 @@ ini_set('display_errors', 1);
 
     
 
-    <section class="trip-ad" style="background: url(<?php 
-    $image_id = the_field('explore_section_image'); 
-    $image_url = wp_get_attachment_image_src($image_id, 'full'); // 'full' returns the original size
-    echo $image_url; ?>">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="trip-ad-content">
-                        <div class="ad-title">
-                            <h2>
-                            <?php echo the_field('explore_title'); ?>
-                                <span><?php echo the_field('explore_highlight_title_'); ?></span>
-                            </h2>
-                        </div>
-                        <?php echo the_field('explore_description'); ?>
-                        <div class="trip-ad-btn">
-                            <a href="<?php echo the_field('explore_button_link'); ?>" class="btn-blue btn-red"><?php echo the_field('explore_button'); ?></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ad-price">
-                        <div class="ad-price-inner">
-                        <a href="<?php echo the_field('explore_circle_link'); ?>"><span><?php echo the_field('explore_circle_text'); ?> <span class="rate"><?php echo the_field('explore_circle_text_big'); ?></span></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="deals-on-sale">
         <div class="container">
