@@ -7807,7 +7807,7 @@ body.style-tab {
     color: green;
 }
 .taxi_feature_details {
-    display: contents;
+    display: flex;
 }
 img.texi_feature-image {
     height: 25px;
