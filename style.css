@@ -7864,3 +7864,12 @@ a {
 /* .taxi-feature_title {
     font-size: 18px; /* Adjust the font size as needed 
 } */
+
+@media (max-width: 480px){
+.slider {
+    height: 750px;
+}
+.package-content {
+    height: 666px;
+}
+}
