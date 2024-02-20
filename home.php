@@ -54,11 +54,13 @@ ini_set('display_errors', 1);
     <section class="" style="background-color: #ffffff;">
         <div class="container">
             <div class="section-title text-center">
-                <h2>Last Minute Deals</h2>
+                <h2>Cab Detail</h2>
                 <div class="section-icon">
                     <i class="flaticon-diamond"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
+                <p>
+					select a cab as per your requirements. We offer the best cab service in Varanasi at an affordable cost.
+				</p>
             </div>
             <div class="deals-outer">
                 <div class="row deals-slider slider-button">
