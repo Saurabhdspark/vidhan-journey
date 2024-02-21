@@ -98,7 +98,9 @@
 																<ul>
 																		<?php
 																		$recent_posts = new WP_Query(array(
-																				'posts_per_page' => 3, // Number of recent posts to display
+																			
+                                                                            'post_type'      => 'tour_packages',
+                                                                            'posts_per_page' => 3, // Number of recent posts to display
 																		));
 
 																		while ($recent_posts->have_posts()) : $recent_posts->the_post();
