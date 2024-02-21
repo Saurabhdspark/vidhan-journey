@@ -52,22 +52,19 @@ ini_set('display_errors', 1);
     </section>
     
     <section class="" style="background-color: #ffffff;">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Cab Detail</h2>
-                <div class="section-icon">
-                    <i class="flaticon-diamond"></i>
-                </div>
-                <p>
-					select a cab as per your requirements. We offer the best cab service in Varanasi at an affordable cost.
-				</p>
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Cab Detail</h2>
+            <div class="section-icon">
+                <i class="flaticon-diamond"></i>
             </div>
-            <div class="deals-outer">
-                <div class="row deals-slider slider-button">
-                <div class="row filter-active" style="position: relative; height: 600px;">
+            <p>select a cab as per your requirements. We offer the best cab service in Varanasi at an affordable cost.</p>
+        </div>
+        <div class="deals-outer">
+            <div class="row deals-slider slider-button">
                 <?php
                 $args = array(
-                    'post_type'      => 'cars',
+                    'post_type' => 'cars',
                     'posts_per_page' => -1,
                 );
 
@@ -76,67 +73,54 @@ ini_set('display_errors', 1);
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
                 ?>
-                <div class="col-xl-4 col-md-6 filter-item " style="position: absolute; left: 0px; top: 0px;">
-                    <div class="taxi-box">
-                        <div class="taxi-box_img">
-                        <?php
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail('full', array('alt' => 'taxi'));
-                            } else {
-                                echo '<img src="' . esc_url(get_template_directory_uri() . '/images/default-thumbnail.jpg') . '" alt="Default Image">';
-                            }
-                        ?>
-                            <!-- <img src="https://varanasitaxi.co.in/img/page/swift.png" alt="taxi"> -->
-                        </div>
-                        <h3 class="taxi-box_title">
-                            <a href="https://api.whatsapp.com/send?phone=919935378847&amp;text=Dezire" target="_blank"><?php the_title(); ?> </a>
-                        </h3>
-                        <p class="taxi-box_rate"><?php the_excerpt(); ?></p>
-                        <div class="taxi-feature row">
-                            <?php
-                            // Check if the repeater field has rows
-                            if (have_rows('car_rides_details')) {
-                                // Loop through the rows of the repeater field
-                                while (have_rows('car_rides_details')) : the_row();
-                                    $ride_icon = get_sub_field('car_ride_icon');
-                                    $ride_type = get_sub_field('car_ride_type');
-                                    $ride_price = get_sub_field('car_ride_price');
-                            ?>
-                                    <!-- <div class="col-md-4">
-                                        <div class="taxi-feature_icons">
-                                            <img src="<?php //echo esc_url($ride_icon); ?>" class="texi_feature-image" alt="png">
-                                        </div>
-                                    </div> -->
-                                    <div class="col-md-12 taxi_feature_details">
-                                        <h3 class="taxi-feature_title"><?php echo esc_html($ride_type); ?></h3>
-                                        <span class="taxi-feature_info"><?php echo esc_html($ride_price); ?></span>
-                                    </div>
-                            <?php
-                                endwhile;
-                            } else {
-                                // No rows found
-                                echo 'No car ride details available.';
-                            }
-                            ?>
-                        </div>
-                  
-                        <p class="g-box-link">
-                            <a href="https://api.whatsapp.com/send?phone=919935378847&amp;text=Hi, I want to book Dezire " class="g-whatsapp" title="Click to Whatsapp Message " target="_blank">
-                                <i class="fa fa-whatsapp"></i>
-                            </a>
-                            <a href="tel:9935378847" title="Click to call">
-                                <i class="fa fa-phone"></i>
-                            </a>
-                        </p>                      
+                        <div class="col-xl-4 col-md-6 filter-item" style="position: relative; height: 600px;">
+                            <div class="taxi-box">
+                                <div class="taxi-box_img">
+                                    <?php
+                                    if (has_post_thumbnail()) {
+                                        the_post_thumbnail('full', array('alt' => 'taxi'));
+                                    } else {
+                                        echo '<img src="' . esc_url(get_template_directory_uri() . '/images/default-thumbnail.jpg') . '" alt="Default Image">';
+                                    }
+                                    ?>
+                                </div>
+                                <h3 class="taxi-box_title">
+                                    <a href="https://api.whatsapp.com/send?phone=919935378847&amp;text=Dezire" target="_blank"><?php the_title(); ?> </a>
+                                </h3>
+                                <p class="taxi-box_rate"><?php the_excerpt(); ?></p>
+                                <div class="taxi-feature row">
+                                    <?php
+                                    // Check if the repeater field has rows
+                                    if (have_rows('car_rides_details')) {
+                                        // Loop through the rows of the repeater field
+                                        while (have_rows('car_rides_details')) : the_row();
+                                            $ride_icon = get_sub_field('car_ride_icon');
+                                            $ride_type = get_sub_field('car_ride_type');
+                                            $ride_price = get_sub_field('car_ride_price');
+                                    ?>
+                                            <div class="col-md-12 taxi_feature_details">
+                                                <h3 class="taxi-feature_title"><?php echo esc_html($ride_type); ?></h3>
+                                                <span class="taxi-feature_info"><?php echo esc_html($ride_price); ?></span>
+                                            </div>
+                                    <?php
+                                        endwhile;
+                                    } else {
+                                        // No rows found
+                                        echo 'No car ride details available.';
+                                    }
+                                    ?>
+                                </div>
 
-    
-                       
-                       
-                    </div>
-                </div>
-                
-            </div>
-                </div>
+                                <p class="g-box-link">
+                                    <a href="https://api.whatsapp.com/send?phone=919935378847&amp;text=Hi, I want to book Dezire " class="g-whatsapp" title="Click to Whatsapp Message " target="_blank">
+                                        <i class="fa fa-whatsapp"></i>
+                                    </a>
+                                    <a href="tel:9935378847" title="Click to call">
+                                        <i class="fa fa-phone"></i>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
                 <?php
                     endwhile;
                     wp_reset_postdata();
@@ -146,8 +130,9 @@ ini_set('display_errors', 1);
                 ?>
             </div>
         </div>
-        <!-- <div class="section-overlay"></div> -->
-    </section>
+    </div>
+</section>
+
     <section class="popular-packages">
         <div class="container">
             <div class="section-title text-center">
