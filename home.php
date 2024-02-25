@@ -51,7 +51,7 @@ ini_set('display_errors', 1);
             </div>
     </section>
     
-    <section class="" style="background-color: #ffffff;">
+    <section class="" style="background-color: #ffeef8;">
     <div class="container">
         <div class="section-title text-center">
             <h2>Cab Detail</h2>
@@ -133,14 +133,14 @@ ini_set('display_errors', 1);
     </div>
 </section>
 
-    <section class="popular-packages">
+    <section class="popular-packages" style="background-color:#eefff2">
         <div class="container">
             <div class="section-title text-center">
                 <h2>Popular Packages</h2>
                 <div class="section-icon">
                     <i class="flaticon-diamond"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
+              
             </div>
             <div class="row package-slider slider-button">
             <div class="slider">
