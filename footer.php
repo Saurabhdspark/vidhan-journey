@@ -35,23 +35,23 @@
                 </div>
                 <div class="footer-links">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <div class="footer-about footer-margin">
                                 <div class="about-logo">
-																<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Yatra-white.png" alt="Image">
+																<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer.png" alt="logo vidhan journey">
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                             
                                 <div class="about-location">
                                     <ul>
                                         <li>
-                                            <i class="flaticon-maps-and-flags" aria-hidden="true"></i> Location
+                                            <i class="flaticon-maps-and-flags" aria-hidden="true"></i> D64, 94-A-4-K-1, Chandrika Nagar, Sigra, Varanasi, Uttar Pradesh 221010
                                         </li>
                                         <li>
-                                            <i class="flaticon-phone-call"></i> (012)-345-6789
+                                            <i class="flaticon-phone-call"></i> 99589 34323
                                         </li>
                                         <li>
                                             <i class="flaticon-mail"></i>
-                                            <a href="https://htmldesigntemplates.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54203b21263a202635223138142031272039353d387a373b39">[email&#160;protected]</a>
+                                            <a href="mailto:info@vidhanjourneyofficial.com" class="__cf_email__">info@vidhanjourneyofficial.com</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -92,7 +92,7 @@
 																	
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-5">
 														<div class="footer-recent-post footer-margin">
 																<h3>Recent Posts</h3>
 																<ul>
@@ -131,42 +131,7 @@
 														</div>
 
                         </div>
-                        <div class="col-lg-3">
-                            <div class="footer-links-list">
-                                <div class="footer-instagram">
-                                    <h3>Instagram</h3>
-                                    <!-- <ul>
-                                        <li>
-                                            <img src="images/insta1.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta2.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta3.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta4.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta5.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta6.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta7.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta8.jpg" alt="Image">
-                                        </li>
-                                        <li>
-                                            <img src="images/insta9.jpg" alt="Image">
-                                        </li>
-                                    </ul> -->
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -177,9 +142,9 @@
                     <div class="col-lg-6">
                         <div class="copyright-content">
                             <p>
-                                2018
-                                <i class="fa fa-copyright" aria-hidden="true"></i> Yatra by
-                                <a href="https://www.cyclonethemes.com/" target="_blank">Cyclone Themes</a>
+                                2024
+                                <i class="fa fa-copyright" aria-hidden="true"></i> Vidhan Official Jouney
+                                
                             </p>
                         </div>
                     </div>
