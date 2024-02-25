@@ -150,5 +150,21 @@ add_action( 'init', 'create_car_post_type' );
 
 
 
+
+function get_submenu_items($parent_id, $menu_items) {
+    $children = array();
+    foreach ($menu_items as $menu_item) {
+        if ($menu_item->menu_item_parent == $parent_id) {
+            $children[] = $menu_item;
+        }
+    }
+    return $children;
+}
+
+// Additional theme functions and code can go here...
+
+
+
+
 // END ENQUEUE PARENT ACTION
 ?>
