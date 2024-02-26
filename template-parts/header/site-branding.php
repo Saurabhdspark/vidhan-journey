@@ -7,8 +7,8 @@
  * @since Twenty Nineteen 1.0
  */
 ?>
-<div class="site-branding">
-
+<div class="site-branding ">
+<div class="logo pull-left">
 	<?php if ( has_custom_logo() ) : ?>
 		<div class="site-logo"><?php the_custom_logo(); ?></div>
 	<?php endif; ?>
@@ -20,7 +20,7 @@
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 		<?php endif; ?>
 	<?php endif; ?>
-
+		</div>
 	<?php
 	$description = get_bloginfo( 'description', 'display' );
 	if ( $description || is_customize_preview() ) :
@@ -31,6 +31,7 @@
 	<?php endif; ?>
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
+		<div class="menu-right">
 			<?php
 			wp_nav_menu(
 				array(
@@ -40,6 +41,7 @@
 				)
 			);
 			?>
+			</div>
 		</nav><!-- #site-navigation -->
 	<?php endif; ?>
 	<?php if ( has_nav_menu( 'social' ) ) : ?>

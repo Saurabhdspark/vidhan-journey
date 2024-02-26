@@ -131,7 +131,7 @@ ul {
 }
 
     ul li {
-        margin-bottom: 15px;
+        margin-bottom: 0px;
         color: #777;
         position: relative
     }
@@ -7874,12 +7874,92 @@ a {
 }
 }
 
-.navbar-nav-wrapper ul {
-    display: none; /* Hide all submenus by default */
+@media only screen and (min-width: 768px){
+.site-branding {
+    margin: 0 calc(6% + 34px);
+
+}
 }
 
-.navbar-nav-wrapper li:hover > ul {
-    display: block; /* Display submenu when parent li is hovered */
+.menu-right {
+    float: right;
+    margin-top: 13px;
 }
 
+.main-navigation .main-menu > li > a {
+    font-weight: 700;
+    color: #0073aa;
+    margin-right: 0.5rem;
+    /* line-height: 3.5; */
+    font-size: 14px;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -moz-transition: all .3s ease-in-out 0s;
+    -ms-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0;
+    color: #333;
+    position: relative;
+    font-weight: 600;
+    text-decoration: none;
+}
 
+.main-navigation .sub-menu {
+    
+    list-style: none;
+    padding-left: 0;
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+    z-index: 99999;
+
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 200px !important;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: 2px solid #d60d45;
+    -webkit-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+    box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+}
+
+.main-navigation .sub-menu > li > a, .main-navigation .sub-menu > li > .menu-item-link-return {
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+    padding: 14px 20px;
+    font-size: 13px;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -moz-transition: all .2s ease-in-out 0s;
+    -ms-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 1.25;
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+    padding: 14px 20px;
+    font-size: 13px;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -moz-transition: all .2s ease-in-out 0s;
+    -ms-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+    color: #333;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 1.25;
+}
+
+.main-navigation .sub-menu > li > a:hover {
+    padding-left: 25px;
+    padding-right: 15px;
+    color: #d60d45;
+    background: #fff;
+}

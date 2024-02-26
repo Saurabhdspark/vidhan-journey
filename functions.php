@@ -24,8 +24,8 @@ if ( !function_exists( 'chld_thm_cfg_parent_css' ) ):
 
         wp_enqueue_script('jqury', get_stylesheet_directory_uri() . '/js/jquery-3.2.1.min.js', array());
         wp_enqueue_script('bootstrap-mi-js', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array());
-        wp_enqueue_script('plugin-js', get_stylesheet_directory_uri() . '/js/plugin.js', array());
-        // wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js', array());
+        // wp_enqueue_script('plugin-js', get_stylesheet_directory_uri() . '/js/plugin.js', array());
+        // wp_enqueue_script('priority-menu-js', get_stylesheet_directory_uri() . '/js/priority-menu.js', array());
         // wp_enqueue_script('main-1-js', get_stylesheet_directory_uri() . '/js/main-1.js', array());
         // wp_enqueue_script('swiper2', get_stylesheet_directory_uri() . '/js/custom-swiper2.js', array());
         
@@ -150,16 +150,12 @@ add_action( 'init', 'create_car_post_type' );
 
 
 
-
-function get_submenu_items($parent_id, $menu_items) {
-    $children = array();
-    foreach ($menu_items as $menu_item) {
-        if ($menu_item->menu_item_parent == $parent_id) {
-            $children[] = $menu_item;
-        }
-    }
-    return $children;
+function register_custom_menu() {
+    register_nav_menu('custom_menu', __('Custom Menu'));
 }
+
+add_action('after_setup_theme', 'register_custom_menu');
+
 
 // Additional theme functions and code can go here...
 
