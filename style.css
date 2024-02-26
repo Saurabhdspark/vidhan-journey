@@ -593,8 +593,8 @@ ul.nav-mini {
         z-index: 99999;
         padding: 0;
         margin: 0;
-        /* position: absolute; */
-        top: 59px;
+        position: relative;
+        top: 0;
         left: 0;
         width: 200px;
         display: none;
@@ -7874,16 +7874,12 @@ a {
 }
 }
 
-.navbar-nav-wrapper ul.sub-menu {
-    /* display: none; */
-    /* position: absolute; */
-    top: 100%;
-    left: 0;
-    background-color: #fff; /* Add your desired background color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow if needed */
+.navbar-nav-wrapper ul {
+    display: none; /* Hide all submenus by default */
 }
 
-.nav.navbar-nav > li:hover > ul.sub-menu {
-    display: block;
+.navbar-nav-wrapper li:hover > ul {
+    display: block; /* Display submenu when parent li is hovered */
 }
+
 

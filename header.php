@@ -49,7 +49,7 @@
 
                             <!-- <a href="index.html"><img alt="Image" src="<?php //echo get_template_directory_uri(); ?>/images/Yatra-01.png"></a> -->
                         </div>
-												<div id="navbar" class="navbar-nav-wrapper">
+                        <div id="navbar" class="navbar-nav-wrapper">
     <ul class="nav navbar-nav" id="responsive-menu">
         <?php
         $menu_items = wp_get_nav_menu_items('custom_menu');
@@ -75,7 +75,7 @@
             $children = get_submenu_items($parent_menu_item->ID, $menu_items);
 
             if (!empty($children)) {
-                echo '<ul class="sub-menu">';
+                echo '<ul>'; // Remove the sub-menu class
                 // Display child menu items
                 foreach ($children as $child) {
                     $child_classes = implode(' ', $child->classes);
