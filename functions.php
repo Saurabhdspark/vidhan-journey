@@ -68,25 +68,55 @@ function register_tour_packages_post_type() {
     );
 
     $args = array(
-        'labels'             => $labels,
-        'description'        => __('Description.', 'your-text-domain'),
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array('slug' => 'tour-package'),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => null,
-        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
-        'taxonomies'         => array('category', 'post_tag') // You can add custom taxonomies if needed
-    );
+      'labels'             => $labels,
+      'description'        => __('Description.', 'your-text-domain'),
+      'public'             => true,
+      'publicly_queryable' => true,
+      'show_ui'            => true,
+      'show_in_menu'       => true,
+      'query_var'          => true,
+      'rewrite'            => array('slug' => 'tour-package'),
+      'capability_type'    => 'post',
+      'has_archive'        => true,
+      'hierarchical'       => false,
+      'menu_position'      => null,
+      'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+     
+  );
+
 
     register_post_type('tour_packages', $args);
 }
 add_action('init', 'register_tour_packages_post_type');
+
+function register_tour_packages_taxonomy() {
+  $labels = array(
+      'name'              => _x('Tour Categories', 'taxonomy general name', 'your-text-domain'),
+      'singular_name'     => _x('Tour Category', 'taxonomy singular name', 'your-text-domain'),
+      'search_items'      => __('Search Tour Categories', 'your-text-domain'),
+      'all_items'         => __('All Tour Categories', 'your-text-domain'),
+      'parent_item'       => __('Parent Tour Category', 'your-text-domain'),
+      'parent_item_colon' => __('Parent Tour Category:', 'your-text-domain'),
+      'edit_item'         => __('Edit Tour Category', 'your-text-domain'),
+      'update_item'       => __('Update Tour Category', 'your-text-domain'),
+      'add_new_item'      => __('Add New Tour Category', 'your-text-domain'),
+      'new_item_name'     => __('New Tour Category Name', 'your-text-domain'),
+      'menu_name'         => __('Tour Category', 'your-text-domain'),
+  );
+
+  $args = array(
+      'hierarchical'      => true,
+      'labels'            => $labels,
+      'show_ui'           => true,
+      'show_admin_column' => true,
+      'query_var'         => true,
+      'rewrite'           => array('slug' => 'tour-category'),
+  );
+
+  register_taxonomy('tour_category', array('tour_packages'), $args);
+}
+add_action('init', 'register_tour_packages_taxonomy');
+
 
 // Plugin approach: Create a file named custom-post-types.php in your plugin folder
 

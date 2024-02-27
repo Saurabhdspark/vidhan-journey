@@ -6,29 +6,29 @@ Template Name: Tour Package
 
 ?>
 <?php get_header(); ?>
-<section class="breadcrumb-outer text-center" style="background: url('<?php echo esc_url(get_the_post_thumbnail_url(null, 'full')); ?>')">
-					<div class="container">
-							<div class="breadcrumb-content">
-									<h2><?php echo get_the_title(); ?></h2>
-									<nav aria-label="breadcrumb">
-											<ul class="breadcrumb">
-													<li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
-													<?php
-													$ancestors = get_ancestors(get_the_ID(), 'page');
-													if ($ancestors) {
-															$ancestors = array_reverse($ancestors);
-															foreach ($ancestors as $ancestor) {
-																	echo '<li class="breadcrumb-item"><a href="' . esc_url(get_permalink($ancestor)) . '">' . esc_html(get_the_title($ancestor)) . '</a></li>';
-															}
-													}
-													?>
-													<li class="breadcrumb-item active" aria-current="page"><?php echo get_the_title(); ?></li>
-											</ul>
-									</nav>
-							</div>
-					</div>
-					<div class="section-overlay"></div>
-			</section>
+<!-- <section class="breadcrumb-outer text-center" style="background: url('<?php //echo esc_url(get_the_post_thumbnail_url(null, 'full')); ?>')">
+        <div class="container">
+                <div class="breadcrumb-content">
+                        <h2><?php //echo get_the_title(); ?></h2>
+                        <nav aria-label="breadcrumb">
+                                <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="<?php //echo esc_url(home_url()); ?>">Home</a></li>
+                                        <?php
+                                        // $ancestors = get_ancestors(get_the_ID(), 'page');
+                                        // if ($ancestors) {
+                                        //         $ancestors = array_reverse($ancestors);
+                                        //         foreach ($ancestors as $ancestor) {
+                                        //                 echo '<li class="breadcrumb-item"><a href="' . esc_url(get_permalink($ancestor)) . '">' . esc_html(get_the_title($ancestor)) . '</a></li>';
+                                        //         }
+                                        // }
+                                        ?>
+                                        <li class="breadcrumb-item active" aria-current="page"><?php //echo get_the_title(); ?></li>
+                                </ul>
+                        </nav>
+                </div>
+        </div>
+        <div class="section-overlay"></div>
+</section> -->
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
         <section class="destinations destination-padding">
@@ -36,12 +36,26 @@ Template Name: Tour Package
                 <div class="row mix asia">
 
                     <?php
+                    // Get the current category slug from the URL
+                    $category_slug = get_query_var('category_name');
+
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $args = array(
                         'post_type' => 'tour_packages',
                         'posts_per_page' => 6, // Adjust as needed
                         'paged' => $paged,
                     );
+
+                    // If a category slug exists, add category filter to the query
+                    if ($category_slug) {
+                        $args['tax_query'] = array(
+                            array(
+                                'taxonomy' => 'category', // Change to your custom taxonomy if needed
+                                'field'    => 'slug',
+                                'terms'    => $category_slug,
+                            ),
+                        );
+                    }
 
                     $query = new WP_Query($args);
 
@@ -96,5 +110,6 @@ Template Name: Tour Package
 
     </main><!-- #main -->
 </div><!-- #primary -->
+
 
 <?php get_footer(); ?>
