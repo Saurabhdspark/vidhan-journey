@@ -35,6 +35,12 @@
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 			</div><!-- .site-branding-container -->
 
+			<!-- Mobile Menu Toggle Button -->
+			<button id="mobile-menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+        <span class="menu-toggle-icon"></span>
+        <span class="screen-reader-text"><?php esc_html_e('Toggle Menu', 'twentynineteen'); ?></span>
+    </button>
+
 			<?php if ( is_singular() && twentynineteen_can_show_post_thumbnail() ) : ?>
 				<div class="site-featured-image">
 					<?php
@@ -56,3 +62,22 @@
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
+	<script>
+				jQuery(document).ready(function ($) {
+    $('#mobile-menu-toggle').click(function () {
+        $(this).toggleClass('open');
+        $('.mobile-main-navigation').slideToggle();
+    });
+
+    // Handle submenu toggles
+    $('.menu-item-has-children > a').click(function (e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('open');
+        $(this).next('.sub-menu').slideToggle();
+    });
+});
+
+
+
+	</script>

@@ -7963,3 +7963,143 @@ a {
     color: #d60d45;
     background: #fff;
 }
+
+/* Mobile Styles (max-width: 767px) */
+@media only screen and (max-width: 767px) {
+    .main-navigation .main-menu,
+    .social-navigation {
+        display: none; /* Hide desktop menu and social links in mobile view */
+    }
+
+    .mobile-menu {
+        display: flex; /* Use flexbox to align items */
+        justify-content: flex-end; /* Align items to the end (right side) */
+        align-items: center; /* Center items vertically */
+        position: absolute;
+        z-index: 99;
+    }
+
+    button#mobile-menu-toggle {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        margin-left: 15px; /* Adjust the margin to provide space between the icon and the edge of the screen */
+        z-index: 99;
+        margin-top: 14px;
+        margin-left: 320px;
+    }
+
+    button#mobile-menu-toggle .bar {
+        background-color: #333;
+        height: 3px;
+        width: 24px;
+        display: block;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    button#mobile-menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    button#mobile-menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    button#mobile-menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .mobile-main-navigation {
+        display: none;
+        /* background-color: #333; */
+        padding: 15px;
+        position: absolute;
+        top: 0;
+        right: 0; /* Align the menu to the right */
+        width: 300px; /* Occupy full width */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+        margin-top: 44px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-top: 2px solid #d60d45;
+        -webkit-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+        -moz-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+        box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+    }
+   
+
+    .mobile-main-navigation .mobile-main-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-main-navigation .mobile-main-menu li {
+        margin-bottom: 10px; /* Adjust spacing between menu items */
+    }
+
+    .mobile-main-navigation .mobile-main-menu a {
+        color: #333; /* Set the text color for mobile menu items */
+        text-decoration: none;
+        font-size: 16px; /* Adjust the font size for mobile menu items */
+        display: block;
+        padding: 10px;
+        border-radius: 5px; /* Add some border-radius for a rounded appearance */
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .mobile-main-navigation .mobile-main-menu a:hover {
+        background-color: #fff; /* Set the hover background color for mobile menu items */
+        padding-left: 25px;
+        padding-right: 15px;
+        color: #d60d45;
+        
+    }
+
+    .menu-item-has-children > a:after {
+        content: '\25B8'; /* Unicode character for a right-pointing triangle (▸) */
+        float: right;
+        margin-left: 5px;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+
+    button.submenu-expand {
+        display: none;
+    }
+
+    li#menu-item--2 {
+        display: none;
+    }
+    .menu-item-has-children.open > .sub-menu {
+        display: block;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-top: 2px solid #d60d45;
+        -webkit-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+        -moz-box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+        box-shadow: 0 0 12px -3px rgba(0,0,0,.4);
+        list-style: none;
+    }
+}
+
+/* Hide Mobile Styles on Screens Larger Than 767px */
+@media only screen and (min-width: 768px) {
+    .mobile-menu,
+    button#mobile-menu-toggle,
+    .mobile-main-navigation {
+        display: none;
+    }
+}
+
+
+

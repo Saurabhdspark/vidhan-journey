@@ -59,4 +59,26 @@
 			?>
 		</nav><!-- .social-navigation -->
 	<?php endif; ?>
+	<div class="mobile-menu">
+	<button id="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <?php if (has_nav_menu('menu-1')) : ?>
+        <nav id="mobile-site-navigation" class="mobile-main-navigation" aria-label="<?php esc_attr_e('Mobile Menu', 'twentynineteen'); ?>">
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'menu-1',
+                    'menu_class' => 'mobile-main-menu',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                )
+            );
+            ?>
+        </nav><!-- #mobile-site-navigation -->
+    <?php endif; ?>
+</div><!-- .mobile-menu -->
+
+
 </div><!-- .site-branding -->
