@@ -31,6 +31,7 @@ Template Name: Tour Package
 </section> -->
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+		
         <section class="destinations destination-padding">
             <div class="container">
                 <div class="row mix asia">
