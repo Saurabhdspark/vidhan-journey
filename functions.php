@@ -189,6 +189,12 @@ add_action('after_setup_theme', 'register_custom_menu');
 
 // Additional theme functions and code can go here...
 
+function custom_category_image() {
+  // Add support for featured images in category
+  add_theme_support('category-thumbnails');
+}
+add_action('after_setup_theme', 'custom_category_image');
+
 
 
 
